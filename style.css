@@ -1,0 +1,215 @@
+@charset "utf-8";
+
+@font-face {font-family: 'Lobster'; src: url('/asset/font/Lobster-Regular.ttf') format('truetype'), url('/asset/font/Lobster-Regular.woff') format('woff');}
+@font-face {font-family: 'Signika'; src: url('/asset/font/Signika-Light.ttf') format('truetype'), url('/asset/font/Signika-Light.woff') format('woff');}
+@font-face {font-family: 'SignikaB'; src: url('/asset/font/Signika-Medium.ttf') format('truetype'), url('/asset/font/Signika-Medium.woff') format('woff');}
+
+* {padding: 0; margin: 0;}
+html {position: relative; display: block; overflow: hidden; height: 100%; width: 100%;}
+body {position: relative; display: block; overflow: hidden; height: 100%; width: 100%; background-color: #fff; font-family: Signika; font-size: 16px; line-height: normal;}
+a {cursor: pointer;}
+br {clear: both;}
+div {position: relative; display: inline-block; overflow: hidden; box-sizing: border-box;}
+
+nav {position: absolute; z-index: 30; top: calc(50% - 300px); right: 0; left: 0; text-align: center; font-size: 18px;}
+nav a {position: relative; display: inline-block; overflow: hidden; margin-top: 10px; padding: 5px; color: #9689e1; transition: 0.5s; border-radius: 5px; font-family: SignikaB;}
+nav a::before {content: ''; position: absolute; z-index: 1; top: -20px; right: -50px; display: block; width: 30px; height: 100px; transform: rotate(-30deg); transition: 0.5s; background-color: #fff9;}
+nav a.active{color: #000;}
+nav a:hover {margin: 5px; color: #000;}
+nav a:hover:before {right: calc(100% + 50px);}
+
+.navbars {position: fixed; z-index: 35; bottom: 10px; right: -1px; display: none; box-sizing: border-box; width: 70px; height: 70px; background-color: #1357A1bb; border-radius: 15px 0 0 15px;}
+
+.navbars::before, .navbars::after {content: ''; position: absolute; top: 25px; right: 15px; display: block; overflow: hidden; width: 40px; height: 5px; background-color: #fff; border-radius: 5px; line-height: 0; transition: 0.5s;}
+
+.navbars::after {top: 42px;}
+
+.navbars:hover::before{width: 28px;}
+.navbars:hover::after{width: 38px;}
+
+.nb_active::before{transform: rotate(-45deg); top: 32px;}
+.nb_active::after{transform: rotate(45deg); top: 32px;}
+.nb_active:hover::before, .nb_active:hover::after{width: 40px;}
+
+section {position: absolute; z-index: 5; top: calc(50% - 250px); right: 0; left: 0; margin: auto; display: none; box-sizing: border-box; overflow: hidden; padding: 20px; width: 90%; max-width: 1000px; height: 500px; box-shadow: 0 0 50px #aaa, 0 0 5px #eee inset; border-radius: 10px; background-color: #fffeff; background-image: url("/asset/image/style/bg-top.jpg"), url("/asset/image/style/bg-bottom.jpg"); background-position: top right, bottom left; background-size: 45% auto, 45% auto; background-repeat: no-repeat, no-repeat; transform-origin: center;}
+
+section::after {content: "© All Rights reserved. Ver: 3.2"; position: absolute; z-index: 2; bottom: 0; left: 5px; font-size: 10px; color: #000; text-align: center;}
+
+wrapper {position: relative; z-index: 2; display: block; box-sizing: border-box; overflow: auto; overflow-x: hidden; height: calc(100% - 80px); margin: 5px;}
+
+h2 {margin: 5px 0; font-family: SignikaB; font-size: 48px; line-height: 48px; letter-spacing: -3px;}
+h3 {display: block; margin: 5px; padding-left: 5px; font-family: Lobster; font-size: 48px; border-bottom: 1px solid #eee; color: #bed9f7;}
+h4 {display: block; font-family: Lobster; font-size: 28px; color: #ffafaf; text-shadow: 1px 1px 0 #fff, -1px 1px 0 #fff, -1px -1px 0 #fff, 1px -1px 0 #fff;}
+h5 {display: inline; font-family: SignikaB; font-size: 20px; color: #9689e1; text-shadow: 1px 1px 0 #fff, -1px 1px 0 #fff, -1px -1px 0 #fff, 1px -1px 0 #fff;}
+
+.shake {transform-origin: center center; animation: shake 0.5s ease-in-out;}
+
+.start img {position: absolute; z-index: 1; top: 50px; left: 3%; height: 100%;}
+.start aside {position: relative; z-index: 2; display: block; box-sizing: border-box; float: right; width: 60%; padding-top: 180px;}
+.start aside span {font-family: Lobster; font-size: 24px; color: #ffafaf; padding-left: 5px;}
+.start aside span small {font-size: 14px;}
+.start aside a {position: relative; display: block; overflow: hidden; box-sizing: border-box; max-width: 480px; padding: 5px 8px; margin: 2px; white-space: nowrap; text-overflow: ellipsis; background-color: #bed9f7; border-radius: 5px; color: #fff; font-size: 16px; cursor: pointer;}
+.start aside a::after {content: "Review skills ?"; position: absolute; top: 0; left: -200%; display: block; padding: 5px 7px; width: 100%; transition: 0.5s; background-color: #bed9f7; color: #333;}
+.start aside a:hover::after {left: 0;}
+.start label {position: absolute; z-index: 3; bottom: 15px; left: 0;}
+.start label a {display: block; overflow: hidden; width: 80px; height: 18px; margin: 3px -5px; padding: 3px; font-size: 13px; line-height: 20px; color:  #333; background-color: #fffa; border-radius: 0 5px 5px 0; text-decoration: none; transition: 0.5s;}
+.start label a:hover {margin-left: 0;}
+.start label a icon {display: block; width: 15px; height: 15px; float: left; margin: 2px 5px; background-image: url(/asset/image/style/icons.png); background-position: top right; background-repeat: no-repeat; background-size: 115px;}
+.start label a icon.portfolio {background-position: right -15px;}
+
+.skills h5 {display: block;} 
+.skills div {display: grid; place-content: center; float: left; width: calc(50% - 3px); height: calc(33% - 5px); min-height: 70px; margin-top: 5px; padding: 15px; background: linear-gradient(45deg, #f1f7ff99, transparent, #f1f7ff99); border-radius: 5px; text-align: center; cursor: pointer; transition: 1s;}
+.skills div:nth-of-type(even){margin-left: 5px;}
+.skills div span {display: none; margin-top: 5px; color: #000c;}
+
+.skills div::before {content: ''; position: absolute; z-index: 1; top: -50px; right: -100%; display: block; width: 30px; height: 200px; transform: rotate(-45deg); transition: 1s; background-color: #fff; opacity: 0.5;}
+.skills div:hover, .skills div.active {background-color: #f1f7ff99;}
+.skills div:hover:before {right: 150%;}
+
+.experiences exptype {position: absolute; top: 50px; left: 50px; display: inline-block; cursor: pointer; transition: 0.5s;}
+.experiences exptype.second {top: 200px;}
+.experiences exptype.exptypetop {top: 10px; left: 10px;}
+.experiences exptype.exptypetop a {display: none;}
+.experiences exptype.exptypebottom {top: auto; bottom: 5px; left: 10px;}
+.experiences exptype span {display: block;}
+.experiences exptype a {display: inline-block; padding: 5px 0 0; background-color: #fff5; color: #777; border-bottom: 1px dotted #999;}
+.experiences explist {position: absolute; z-index: 2; top: 70px; left: 5px; right: 5px; display: none; overflow: auto; height: calc(100% - 180px); background-color: #fff; border-radius: 5px;}
+.experiences div {position: relative; float: left; width: calc(50% - 3px); height: calc(50% - 5px); min-height: 90px; margin-top: 5px; padding: 15px; background: linear-gradient(45deg, #f1f7ff99, transparent, #f1f7ff99); border-radius: 5px; cursor: pointer;}
+.experiences div:nth-of-type(even) {margin-left: 5px;}
+.experiences div h5 {display: block;}
+.experiences div small {display: block; font-size: 14px; color: #777;}
+.experiences div p {position: absolute; bottom: -200px; left: 0; right: 0; display: block; overflow: hidden; box-sizing: border-box; height: 100%; padding: 10px; font-size: 14px; background-color: #ffffffdd; transition: 0.5s; border-radius: 5px;}
+.experiences div a {position: absolute; z-index: 2; bottom: 5px; right: 10px; font-size: 18px; color: #fbb9e9;}
+.experiences div a u {font-family: SignikaB; font-weight: bolder; text-decoration: none;}
+.experiences div p.active {bottom: 0;}
+
+.history img {position: absolute; z-index: 1; right: 30px; bottom: 12px; width: 240px;}
+.history wrapper {padding: 20px 230px 0 0;}
+.history p {padding: 10px;}
+
+.certificate ul {display: block;}
+.certificate ul li {margin: 20px;}
+.certificate small {display: block; padding: 5px 2px; color: #333;}
+
+.contact div {position: relative; width: calc(50% - 20px); height: 120px; margin: 10px;}
+.contact div::before {content: ""; position: absolute; z-index: 1; left: 0; top: 10px; display: block; overflow: hidden; width: 100px; height: 100px; border: 2px solid #eee; border-radius: 100%; transition: 0.5s;}
+.contact icon {position: absolute; z-index: 2; top: 15px; left: 25px; display: block; width: 58px; height: 60px; background-image: url('/asset/image/style/icons.png'); background-position: top left; background-repeat: no-repeat; background-size: 135px; transition: 0.5s;}
+.contact icon.linkedin {background-position: -60px top;}
+.contact icon.github {background-position: left -60px;}
+.contact icon.stack {background-position: -60px -60px;}
+.contact span {position: absolute;  z-index: 3; left: 28px; top: 75px; right: 20px; word-break: break-all; font-size: 18px; line-height: 20px; transition: 0.5s;}
+.contact a {position: absolute; z-index: 5; left: 10px; top: 10px; right: 10px; bottom: 10px; display: block;}
+
+.contact div:hover::before {width: 230px; border-radius: 10px;}
+
+@media only screen and (max-height:600px){nav {top: 0;}}
+@media only screen and (max-height:550px){
+section {top: 40px; height: calc(100% - 50px);}
+.start img {top: 10px; left: 5%; height: 100%;}
+.start aside {padding-top: 10% !important;}
+.experiences exptype {top: 20px;}
+.experiences exptype.second {top: 130px;}
+.experiences explist {height: calc(100% - 70px);}
+}
+@media only screen and (max-height:500px){.history img {width: auto; max-height: 60%;}}
+@media only screen and (max-height:450px){.contact div {margin: 0 10px;}}
+@media only screen and (max-height:400px){
+nav {padding: 10px !important;}
+.experiences exptype {top: 10px;}
+.experiences exptype.second {top: 90px;}
+.experiences exptype a {display: none;}
+}
+@media only screen and (max-height:300px){nav a {padding: 0 5px !important;}}
+
+@media only screen and (max-width:950px){
+.start aside {width: 68%;}
+.start aside h3 {font-size: 38px; letter-spacing: -1px;}
+.start div {width: 400px;}
+}
+
+@media only screen and (max-width:850px){
+.start aside {width: 55%; padding-top: 120px;}
+.start aside span {display: block;}
+.start div {width: calc(100% - 22px);}
+}
+
+@media only screen and (max-width:750px){
+.history img {width: 200px;}
+.history wrapper {padding-right: 200px;}
+.experiences div {width: 100%; height: calc(25% - 5px); margin: 5px 0 0 0 !important;}
+}
+
+@media only screen and (max-width:650px){
+.start aside {width: 64%;}
+.start img {left: -12%;}
+}
+
+@media only screen and (max-width:550px){
+nav {top: 0; right: 0; left: 0; bottom: 0; padding: 70px 0 0; background-color: #000000dd; display: none;}
+nav a {display: block; font-size: 24px; padding: 10px;}
+nav a.active, nav a:hover {color: #fff;}
+nav a::before {opacity: 0;}
+section {top: 3%; bottom: 3%; height: auto; background-size: 60% auto, 60% auto;}
+.navbars {display: block;}
+.start img {top: 250px; height: calc(100% - 240px); left: 50%; transform: translateX(-50%);}
+.start aside {width: 100%; padding: 20px 10px !important;}
+.start aside h2 {font-size: 48px; line-height: 48px;}
+.skills div {float: none; width: 100%; margin: 5px 0 0 !important; height: calc(16% - 5px);}
+.history img {bottom: 5px; right: calc(50% - 100px);}
+.history wrapper {height: calc(100% - 300px); padding: 10px;}
+.contact div {width: 100%; margin: 10px 10px -10px 10px;}
+}
+
+@media only screen and (max-width:400px){
+.start aside h2 {font-size: 40px; line-height: 40px;}
+.experiences exptype {left: 10px;}
+.experiences exptype h4 {font-size: 24px;}
+.experiences exptype span {font-size: 14px;}
+.experiences explist {min-height: 100px;}
+.experiences div p {font-size: 12px;}
+.contact div:hover::before {width: calc(100% - 15px);}
+}
+
+@media only screen and (max-width:350px){
+.start img {top: 210px; height: calc(100% - 200px);}
+.start aside {padding: 0 !important;}
+.skills h5 {font-size: 18px;}
+.skills span {font-size: 14px;}
+.experiences exptype h4 {font-size: 22px;}
+.experiences exptype span {font-size: 13px;}
+}
+
+@media only screen and (max-width:300px){
+.start aside h2 {font-size: 36px; line-height: 36px;}
+.experiences exptype h4 {font-size: 20px;}
+}
+
+@keyframes scroll {
+0% {top: -30px;}
+50% {top: -10px;}
+100% {top: -30px;}
+}
+
+@keyframes shake {
+0%  {transform: translate( 0px,  0px) rotate(0deg);}
+5%  {transform: translate( 2px,  1px) rotate(0.5deg);}
+10% {transform: translate( 1px,  1px) rotate(0.5deg);}
+15% {transform: translate( 2px, -1px) rotate(0.5deg);}
+20% {transform: translate(-3px, -3px) rotate(0.5deg);}
+25% {transform: translate(-2px, -3px) rotate(-1.5deg);}
+30% {transform: translate(-1px,  2px) rotate(0.5deg);}
+35% {transform: translate(-3px,  2px) rotate(0.5deg);}
+40% {transform: translate( 2px, -2px) rotate(-0.5deg);}
+45% {transform: translate( 2px,  2px) rotate(0.5deg);}
+50% {transform: translate(-1px, -2px) rotate(-0.5deg);}
+55% {transform: translate(-2px,  2px) rotate(0.5deg);}
+60% {transform: translate( 2px,  1px) rotate(-0.5deg);}
+65% {transform: translate( 2px,  1px) rotate(-1.5deg);}
+70% {transform: translate( 1px, -2px) rotate(-1.5deg);}
+75% {transform: translate( 2px, -1px) rotate(0.5deg);}
+80% {transform: translate(-3px, -2px) rotate(-1.5deg);}
+85% {transform: translate( 2px, -3px) rotate(-0.5deg);}
+90% {transform: translate( 1px,  2px) rotate(0.5deg);}
+95% {transform: translate(-1px,  1px) rotate(-1.5deg);}
+99% {transform: translate(-3px, -1px) rotate(-1.5deg);}
+}
